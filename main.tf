@@ -8,7 +8,7 @@ module "labels" {
 }
 data "google_client_config" "current" {
 }
-###########################################
+#-----------------------------------------
 locals {
   source_image         = var.source_image != "" ? var.source_image : "ubuntu-2204-jammy-v20230908"
   source_image_family  = var.source_image_family != "" ? var.source_image_family : "ubuntu-2204-lts"
@@ -40,9 +40,9 @@ locals {
   )
 }
 
-#####==============================================================================
-##### Manages a VM instance template resource within GCE.
-#####==============================================================================
+#--------------------------------------------------------------------------------
+# Manages a VM instance template resource within GCE.
+#--------------------------------------------------------------------------------
 resource "google_compute_instance_template" "tpl" {
   count                   = var.instance_template ? 1 : 0
   name_prefix             = format("%s-%s", module.labels.id, (count.index))
@@ -183,9 +183,9 @@ data "google_compute_zones" "available" {
   region  = var.region
 }
 
-#####==============================================================================
-##### Manages a VM instance resource within GCE.
-#####==============================================================================
+#--------------------------------------------------------------------------------
+#Manages a VM instance resource within GCE.
+#--------------------------------------------------------------------------------
 resource "google_compute_instance_from_template" "compute_instance" {
   provider            = google
   count               = var.instance_from_template ? 1 : 0
