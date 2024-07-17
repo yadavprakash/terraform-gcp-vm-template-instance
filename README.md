@@ -24,7 +24,7 @@ data "google_compute_instance_template" "generic" {
 }
 
 module "compute_instance" {
-  source                 = "https://github.com/opsstation/terraform-gcp-vm-template-instance.git"
+  source                 = "https://github.com/yadavprakash/terraform-gcp-vm-template-instance.git"
   name                   = "dev"
   environment            = "instance"
   region                 = "asia-northeast1"
@@ -43,7 +43,7 @@ module "compute_instance" {
 
 ```hcl
 module "instance_template" {
-  source               = "https://github.com/opsstation/terraform-gcp-vm-template-instance.git"
+  source               = "https://github.com/yadavprakash/terraform-gcp-vm-template-instance.git"
   name                 = "dev"
   environment          = "test"
   region               = "asia-northeast1"
@@ -64,7 +64,7 @@ module "instance_template" {
 }
 ## compute-instance
 module "compute_instance" {
-  source                 = "https://github.com/opsstation/terraform-gcp-vm-template-instance.git"
+  source                 = "https://github.com/yadavprakash/terraform-gcp-vm-template-instance.git"
   name                   = "dev"
   environment            = "instance"
   region                 = "asia-northeast1"
@@ -95,14 +95,14 @@ This example demonstrates how to create various GCP resources using the provided
 - This module currently does not provide any outputs.
 
 # Examples
-For detailed examples on how to use this module, please refer to the [example](https://github.com/opsstation/terraform-gcp-vm-template-instance/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [example](https://github.com/yadavprakash/terraform-gcp-vm-template-instance/tree/master/_example) directory within this repository.
 
 ## Authors
 Your Name
 Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/opsstation/terraform-gcp-vm-template-instance/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/yadavprakash/terraform-gcp-vm-template-instance/blob/master/LICENSE) file for details.
 
 
 
@@ -124,7 +124,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:opsstation/terraform-gcp-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::git@github.com:yadavprakash/terraform-gcp-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -163,7 +163,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. sequence of application name and environment `name`,`environment`,'attribute' [`webserver`,`qa`,`devops`,`public`,] . | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
 | <a name="input_labels"></a> [labels](#input\_labels) | Labels, provided as a map | `map(string)` | `{}` | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | Machine type to create, e.g. n1-standard-1 | `string` | `"e2-small"` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy,opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy,yadavprakash'. | `string` | `"yadavprakash"` | no |
 | <a name="input_metadata"></a> [metadata](#input\_metadata) | Metadata, provided as a map | `map(string)` | `{}` | no |
 | <a name="input_min_cpu_platform"></a> [min\_cpu\_platform](#input\_min\_cpu\_platform) | Specifies a minimum CPU platform. Applicable values are the friendly names of CPU platforms, such as Intel Haswell or Intel Skylake. See the complete list: https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform | `string` | `null` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the resource. Provided by the client when the resource is created. | `string` | `"test"` | no |
